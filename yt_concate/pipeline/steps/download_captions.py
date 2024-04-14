@@ -22,5 +22,5 @@ class DownloadCaptions(Step):
                 continue
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([yt.url])
-            break
+            # break
         return data

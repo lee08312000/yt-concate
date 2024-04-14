@@ -19,7 +19,13 @@ class GetVideoList(Step):
         first_url = base_search_url + 'key={}&channelId={}&part=snippet,id&order=date&maxResults=25'.format(API_KEY,
                                                                                                             channel_id)
 
-        video_links = ['https://www.youtube.com/watch?v=Yh7xfGTTvsA']
+        video_links = [
+            'https://www.youtube.com/watch?v=Yh7xfGTTvsA',
+            'https://www.youtube.com/watch?v=VpxXzGp3WwI',
+            'https://www.youtube.com/watch?v=OMDqBzYH6Ko',
+            'https://www.youtube.com/watch?v=h5g_dO2JgE4',
+            'https://www.youtube.com/watch?v=4SABYbyofWQ',
+        ]
         # url = first_url
         # while True:
         #     inp = urllib.request.urlopen(url)
