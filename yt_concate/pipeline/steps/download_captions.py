@@ -15,11 +15,12 @@ class DownloadCaptions(Step):
             'encoding': 'utf-8',
         }
 
-        for url in data:
-            print('dowmloading caption for', url)
-            if utils.caption_file_exists(url):
+        for yt in data:
+            print('dowmloading caption for', yt.id)
+            if utils.caption_file_exists(yt):
                 print('found existing caption file')
                 continue
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-                ydl.download([url])
+                ydl.download([yt.url])
             break
+        return data
