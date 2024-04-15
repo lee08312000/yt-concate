@@ -1,3 +1,5 @@
+import logging
+
 import yt_dlp
 
 from .step import Step
@@ -16,9 +18,9 @@ class DownloadCaptions(Step):
         }
 
         for yt in data:
-            print('dowmloading caption for', yt.id)
+            logging.getLogger().info(f'dowmloading caption for {yt.id}')
             if utils.caption_file_exists(yt):
-                print('found existing caption file')
+                logging.getLogger().info(f'found existing caption file')
                 continue
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 ydl.download([yt.url])
